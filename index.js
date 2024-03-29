@@ -20,7 +20,7 @@ let posts = [];
 
 
     //mongoose.connect('mongodb://127.0.0.1:27017/blogDB');
-mongoose.connect('mongodb+srv://Kashni:Test123@cluster0.5s628r9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://Kashni:Test123@cluster0.5s628r9.mongodb.net/blogDB?retryWrites=true&w=majority&appName=Cluster0');
 
 
 
