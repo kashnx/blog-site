@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require('lodash');
 const mongoose = require('mongoose');
+const dotenv=require('dotenv');
+dotenv.config();
 const path=require('path');
 
 const app = express();
@@ -20,7 +22,7 @@ let posts = [];
 
 
     //mongoose.connect('mongodb://127.0.0.1:27017/blogDB');
-mongoose.connect('mongodb+srv://Kashni:Test123@cluster0.5s628r9.mongodb.net/blogDB?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect(process.env.MONGODB_CONNECT_URI);
 
 
 
