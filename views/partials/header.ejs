@@ -4,6 +4,14 @@
 <head>
   <meta charset="utf-8">
   <title>Daily Journal</title>
+  <script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/shepherd.js@12.0.4/dist/esm/shepherd.mjs"
+></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/shepherd.js@12.0.4/dist/css/shepherd.css"
+/>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/styles.css">
@@ -14,13 +22,21 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         <!-- 6 -->
-        <li id="home"><a href="/">HOME</a></li>
-        <li id="compose"><a href="/compose">COMPOSE</a></li>
-        <li id="about"><a href="about">ABOUT US</a></li>
-        <li id="contact"><a href="contact">CONTACT US</a></li>
+        <li class="home" id="home" class="home"><a href="/">HOME</a></li>
+        <li class="compose"><a href="/compose">COMPOSE</a></li>
+        <li class="about"><a href="about">ABOUT US</a></li>
+        <li class="contact"><a href="contact">CONTACT US</a></li>
+        <li class="start-tour" ><button type="button" class="btn btn-info" id="start-tour">TAKE A TOUR</button></li>
       </ul>
     </div>
   </nav>
 
-<body>
+  <!-- <script>
+    const element=document.getElementsByClassName('start-tour');
+element.addEventListener('click', () => {
+  tour.start();
+});
+  </script> -->
   <div class="container">
+<body>
+  

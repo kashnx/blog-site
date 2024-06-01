@@ -1,4 +1,101 @@
-<%- include('./partials/header') %> 
-<h1>About</h1>
-<p><%= AboutContent %></p>
- <%- include('./partials/footer') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 50px;
+      color: #1abc9c;
+    }
+
+    .about-content {
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .about-image {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .about-team {
+      text-align: center;
+    }
+
+    .team-member {
+      margin-bottom: 30px;
+    }
+
+    .team-member img {
+      border-radius: 50%;
+      max-width: 150px;
+      margin-bottom: 15px;
+    }
+
+    .team-member h5 {
+      color: #1abc9c;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .team-member p {
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header and Navbar will be included here -->
+  <%- include('partials/header') %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="about-header">About Us</h2>
+        <p class="about-content">
+          Welcome to TheBlogger, your number one source for all things. We're dedicated to giving you the very best of blogging, with a focus on dependability, customer service and uniqueness.
+        </p>
+        <p class="about-content">
+          Founded in 2022 by Kashni, TheBlogger has come a long way from its beginnings in a  home . When Kashni first started out, her passion for helping other parents be more eco-friendly, providing the best equipment for his fellow musicians drove him to do intense research, quit his day job, and gave him the impetus to turn hard work and inspiration into to a booming online store. We now serve customers all over India, and are thrilled to be a part of the eco-friendly wing of the  industry.
+        </p>
+        <p class="about-content">
+          We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
+        </p>
+      </div>
+    </div>
+    <div class="row about-team">
+      <div class="col-md-12">
+        <h3 class="about-header">Our Team</h3>
+      </div>
+      <div class="col-md-4 team-member">
+        <!-- <img src="team-member-1.jpg" alt="Team Member 1" class="about-image"> -->
+        <h5>Jane Doe</h5>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="col-md-4 team-member">
+        <!-- <img src="team-member-2.jpg" alt="Team Member 2" class="about-image"> -->
+        <h5>John Smith</h5>
+        <p>Head of Marketing</p>
+      </div>
+      <div class="col-md-4 team-member">
+        <!-- <img src="team-member-3.jpg" alt="Team Member 3" class="about-image"> -->
+        <h5>Emily Johnson</h5>
+        <p>Lead Developer</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer will be included here -->
+  <%- include('partials/footer') %>
+</body>
+</html>

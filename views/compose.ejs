@@ -1,16 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compose</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@9.1.1/dist/css/shepherd.css">
+</head>
+<body>
 <%- include('./partials/header') %>
 <h1>Compose</h1>
 <form action="/compose" method="post">
 <label>Title</label>
 <div class="form-group">
-    <input class="form-control" type="text" name="postTitle" >
+    <input class="form-control"id="title" type="text" name="postTitle" >
     <label>Post</label>
-<textarea class="form-control" name="postBody" id=""  cols="50" rows="10"></textarea>
+<textarea class="form-control"id="form" name="postBody" id=""  cols="50" rows="10"></textarea>
 </div>
 
-<button class="btn btn-primary" type="submit">Publish</button>
+<button class="btn btn-primary" id="publish" type="submit">Publish</button>
 </form>
 
 
 
-<%- include('./partials/footer') %>
+
+
+<script src="https://cdn.jsdelivr.net/npm/shepherd.js@9.1.1/dist/js/shepherd.min.js"></script>
+<script>
+    // Shepherd.js initialization code can go here or in your custom.js
+    document.addEventListener('DOMContentLoaded', () => {
+    const tour = new Shepherd.Tour({
+useModalOverlay: true,
+defaultStepOptions: {
+classes: 'shadow-md bg-purple-dark',
+scrollTo: true
+},
+useModalOverlay: true
+});
+tour.addStep({
+    id: 'step3',
+    text: '📝 Every great blog starts with a great title! Add your captivating title here.',
+    scrollTo: {
+        behavior: 'smooth',
+        block: 'center'
+    },
+    attachTo: {
+        element: '#title',
+        on: 'bottom'
+    },
+    buttons: [ {
+          text: 'Back',
+          action: tour.back
+        },{
+        text: 'Next',
+        action: tour.next
+    }]
+});
+tour.addStep({
+    id: 'step4',
+    text: '📚 Now it\'s time to let your creativity flow. Add your content here and share your thoughts with the world!',
+    scrollTo: {
+        behavior: 'smooth',
+        block: 'center'
+    },
+    attachTo: {
+        element: "#form",
+        on: 'bottom'
+    },
+    buttons: [
+    {
+          text: 'Back',
+          action: tour.back
+        },{
+        text: 'Next',
+        action: tour.next
+    }]
+});
+tour.addStep({
+  id: 'tour-over',
+  text: '🎉 That\'s it for the tour! You\'re all set to explore and create. Happy blogging!',
+  scrollTo: {
+        behavior: 'smooth',
+        block: 'center'
+    },
+    attachTo: {
+        element: "#publish",
+        on: 'top'
+    },
+     buttons: [
+    {
+      text: 'Finish',
+
+      action: tour.complete
+    }
+  ]
+});
+
+if (localStorage.getItem('startTour') === 'true') {
+        localStorage.removeItem('startTour');
+        tour.start();
+}
+    });
+    </script>
+    <footer>
+    <%- include('./partials/footer') %>
+    </footer>
+</body>

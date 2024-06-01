@@ -1,8 +1,23 @@
-<%- include('./partials/header.ejs') -%>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- Shepherd.js CSS from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@9.1.1/dist/css/shepherd.css">
+    <!-- Other CSS files -->
+</head>
+<body>
+    <%- include('./partials/header.ejs') -%>
     <h1>Home</h1>
     <p>
         <%= startingContent %>
     </p>
+    <h3>Compose and Share</h3>
+    <p>Unleash your creativity with our easy-to-use composing tools. Whether you're penning a quick update, sharing your latest adventure, or writing an in-depth analysis, Daily Journal offers a space for your voice to be heard. Write, edit, and publish your posts with ease, and share your unique perspective with the world.</p>
     <% posts.forEach(post=> { %>
         <% console.log(post.title) %>
             <h1>
@@ -16,4 +31,124 @@
 
             <% }); %>
 
-                <%- include('./partials/footer') %>
+               
+    
+
+         <!-- Shepherd.js JS from CDN -->
+         <script src="https://cdn.jsdelivr.net/npm/shepherd.js@9.1.1/dist/js/shepherd.min.js"></script>
+         <script>
+          // Shepherd.js initialization code can go here or in your custom.js
+          document.addEventListener('DOMContentLoaded', () => {
+          const tour = new Shepherd.Tour({
+    useModalOverlay: true,
+    defaultStepOptions: {
+      classes: 'shadow-md bg-purple-dark',
+      scrollTo: true
+    },
+    useModalOverlay: true
+  });
+
+  // const imageHTML = '<br><img src="../../shepherd.png">';
+  
+  tour.addStep({
+    id: 'home',
+    text: '👋 Welcome to TheBlogger! We\'re thrilled to have you here. Ready to explore? Let\'s go on a quick tour of our site.',
+    scrollTo: {
+          behavior: 'smooth',
+          block: 'center'
+      },
+    // attachTo: {
+    //   element: '.home',
+    //   on: 'center'
+    // },
+  //   classes: 'example-step-extra-class',
+    buttons: [
+     
+      {
+          text: 'Exit Tour',
+          action: tour.cancel
+        },
+        {
+        text: 'Next',
+        action: tour.next
+      },
+    ]
+  });
+  tour.addStep({
+      id: 'step2',
+      text: '🏡 This is your Home Page! Here, you\'ll find all the composed blogs. Dive in and enjoy the read!',
+      attachTo: {
+          element:'.home',
+          on: 'bottom'
+      },
+      buttons: [{
+          text: 'Next, We Scroll!',
+          action: tour.next
+      }]
+  });
+  tour.addStep({
+      id: 'step5',
+      text: '✍️ Want to create your own masterpiece? Click this Compose button to start crafting your blog!',
+      scrollTo: {
+          behavior: 'smooth',
+          block: 'center'
+      },
+      attachTo: {
+          element: '.compose',
+          on: 'bottom'
+      },
+  
+      // Here we run a function.
+      // In the function we click on an element
+      // and then we call resolve.
+      // Once thats done, the displaying to the step
+      // continues as normal.
+      beforeShowPromise: function() {
+          return new Promise(function(resolve) {
+              // Using JS To click on an element
+              localStorage.setItem('startTour', 'true');
+              document.querySelector(".compose").click();
+              resolve();
+          });
+      },
+  
+      buttons: [ {
+            text: 'Back',
+            action: tour.back
+          },{
+          text: 'Next, We  Go To A New Page!',
+          action: function() {
+              window.location.href = "/compose";
+          }
+      }]
+  });
+  // Set up a tour here
+  
+  // Some JS code to check the
+  // the value of the 'shtc' param
+  // const queryString = window.location.search;
+  // const urlParams = new URLSearchParams(queryString);
+  // const shouldTourContinue = urlParams.get('compose');
+  
+  // // Start the tour if we get the correct
+  // // GET param value
+  // if (shouldTourContinue == 'true') {
+  //     tour.start();
+  // }
+  
+  
+  
+  // const element=document.getElementsByClassName('start-tour');
+  // element.addEventListener('click', () => {
+  //   tour.start();
+  // });
+  //  });
+  // tour.start();
+  document.getElementById('start-tour').addEventListener('click', () => {
+        tour.start();
+      });
+          });
+      </script>
+   <%- include('./partials/footer') %>
+</body>
+</html>
