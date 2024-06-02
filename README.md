@@ -1,6 +1,3 @@
-Certainly! Here's a simplified version of the README:
-
----
 
 # Blog Website
 
