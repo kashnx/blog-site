@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started</title>
+  <link rel="stylesheet" href="../public/css/styles.css">;
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .jumbotron {
+      background-color: #1abc9c;
+      color: #fff;
+      padding: 100px 25px;
+      text-align: center;
+    }
+
+    .jumbotron h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+    }
+
+    .jumbotron p {
+      font-size: 1.2rem;
+    }
+
+    .btn-custom {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1rem;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      background-color: #1abc9c;
+      color: #fff;
+    }
+
+    .container-content {
+      padding: 60px 0;
+    }
+
+    .container-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .card {
+      border: none;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .card img {
+      border-radius: 10px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      background-color: #fff;
+      padding: 25px;
+      border-top: 5px solid #1abc9c;
+    }
+
+    .card-body h5 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .card-body p {
+      font-size: 1rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <% include('./partials/header') %>
+  <div class="jumbotron">
+    <h1>Welcome to Our Blog</h1>
+    <p>Join us and share your thoughts with the world</p>
+    <a href="/home" class="btn btn-custom">Get Started</a>
+  </div>
+
+  <div class="container container-content">
+    <h2>Why Blog with Us?</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Image 1">
+          <div class="card-body">
+            <h5 class="card-title">Easy to Use</h5>
+            <p class="card-text">Our platform is designed for ease of use, allowing you to focus on what you do best - writing!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Image 2">
+          <div class="card-body">
+            <h5 class="card-title">Powerful Tools</h5>
+            <p class="card-text">From rich text editing to multimedia support, we've got all the tools you need to create amazing content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Image 3">
+          <div class="card-body">
+            <h5 class="card-title">Reach a Wider Audience</h5>
+            <p class="card-text">Share your blog with a vast audience and get the recognition you deserve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('./partials/footer') %>
+</body>
+</html>

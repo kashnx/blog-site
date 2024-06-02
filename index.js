@@ -38,8 +38,12 @@ const postSchema = {
 const Post = mongoose.model("Post", postSchema);
 
 
+app.get('/', (req, res) => {
+  res.render('get-started');
+});
 
-app.get("/", function (req, res) {
+
+app.get("/home", function (req, res) {
 
   // res.render("home", { startingContent: homeStartingContent, posts: posts });
   Post.find().then(posts => {
