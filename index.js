@@ -83,7 +83,7 @@ app.post("/compose", function (req, res) {
     content: req.body.postBody
 
   });
-  post.save().then(() => res.redirect("/"));
+  post.save().then(() => res.redirect("/home"));
 
 
 
