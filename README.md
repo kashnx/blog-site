@@ -74,7 +74,6 @@ This project uses the following dependencies:
 - MongoDB: NoSQL database for storing blog posts
 - EJS: Embedded JavaScript templates for server-side rendering
 - Shepherd.js: JavaScript library for guiding users through a tour of the website
-- Quill.js: Rich text editor for composing blog posts
 
 ## Customization
 
